@@ -1,0 +1,17 @@
+spring:
+  r2dbc:
+    url: r2dbc:h2:mem:///productdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: capitole
+    password:
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: product-pricing
+
+logging:
+  level:
+    org.springframework.r2dbc: DEBUG
