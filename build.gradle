@@ -40,3 +40,16 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+openApiGenerate {
+	generatorName = "spring"
+	inputSpec = "$projectDir/src/main/resources/product-pricing-api.yaml"
+	outputDir = "$buildDir/generated"
+	apiPackage = "com.capitole.product_pricing_service.api"
+	modelPackage = "com.capitole.product_pricing_service.model"
+	configOptions = [
+			interfaceOnly    : "true",
+			useSpringBoot3   : "true",
+			reactive         : "true"
+	]
+}
